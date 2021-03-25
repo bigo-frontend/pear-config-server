@@ -1,0 +1,9 @@
+{
+  "extends": "eslint-config-egg/typescript",
+  "rules": {
+    "@typescript-eslint/ban-ts-ignore": 1
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}
