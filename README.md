@@ -47,7 +47,7 @@ npm run dev
 
 ## 🔨 Usage
 
-- [请参考](https://github.com/bigo-frontend/pear-config-server/blob/main/README.md)
+- [请参考](https://github.com/bigo-frontend/pear-config-admin/blob/main/README.md#-install)
 
 ## json静态化
 
