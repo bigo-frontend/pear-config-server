@@ -139,8 +139,32 @@ export default class KeyValue extends Service {
         condition,
         updateData
       );
+      
+      // 添加发布记录
+      if (status === Estatus.ONLINE) {
+        const publishData = updateResult.data;
+        await this.updatePublishRecord(publishData);
+      }
+
       return updateResult;
     }
+  }
+
+  /**
+   * 添加配置发布记录
+   *
+   * @param {*} data
+   * @memberof KeyValue
+   */
+   async updatePublishRecord(data) {
+    const { author, template, _id, publishConfig } = data;
+    await this.ctx.service.db.create(this.ctx.model.Records, {
+      author,
+      template,
+      configRef: _id,
+      config: publishConfig,
+      type: 1,
+    });
   }
 
   /**

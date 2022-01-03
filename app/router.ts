@@ -41,4 +41,9 @@ export default (app: Application) => {
   // json配置草稿
   router.get(`/keyValueDraft`, controller.keyValueDraft.list);
   router.post(`/keyValueDraft/rollback`, controller.keyValueDraft.rollback);
+
+  // records
+  router.get(`/records`, controller.records.list);
+  router.post(`/records/rollback`, controller.records.rollback);
+  router.get(`/records/preview/:mode/:id`, controller.records.detail);
 };
