@@ -189,7 +189,7 @@ export default class Database extends Service {
    * @returns {Promise<DatabaseResponse>} 
    * @memberof Database
    */
-  public async pagingFind(model: any, condition: object = {}, pageSize: number, pageIndex: number): Promise<DatabaseResponse> {
+  public async pagingFind(model: any, condition: object = {}, pageSize: number | string, pageIndex: number | string): Promise<DatabaseResponse> {
     this.ctx.app.logger.info('res=%j', {
       user: this.ctx.userInfo?.username,
       dbOpType: 'pagingFind',
